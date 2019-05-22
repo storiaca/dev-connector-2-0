@@ -1,0 +1,19 @@
+{
+  "name": "dev-connector-2-0",
+  "version": "1.0.0",
+  "description": "Social network for developers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storiaca/dev-connector-2-0.git"
+  },
+  "author": "Aleksandar Ristic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/storiaca/dev-connector-2-0/issues"
+  },
+  "homepage": "https://github.com/storiaca/dev-connector-2-0#readme"
+}
