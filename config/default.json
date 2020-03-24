@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://storiaca:storiaca123@devconnector-j4iqi.mongodb.net/test?retryWrites=true"
+  "mongoURI": "mongodb+srv://storiaca:storiaca123@devconnector-j4iqi.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "mysecrettoken"
 }
