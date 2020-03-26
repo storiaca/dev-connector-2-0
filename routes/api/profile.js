@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
-const { check, validationResults } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
@@ -36,15 +36,17 @@ router.post(
   "/",
   [
     auth,
-    check("status", "Status is required")
-      .not()
-      .isEmpty(),
-    check("skills", "Skills is required")
-      .not()
-      .isEmpty()
+    [
+      check("status", "Status is required")
+        .not()
+        .isEmpty(),
+      check("skills", "Skills is required")
+        .not()
+        .isEmpty()
+    ]
   ],
   async (req, res) => {
-    const errors = validationResults(req);
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
@@ -75,7 +77,7 @@ router.post(
     if (skills) {
       profileFields.skills = skills.split(",").map(skill => skill.trim());
     }
-    console.log(skills);
+    console.log(profileFields.skills);
 
     res.send("Hello");
   }
