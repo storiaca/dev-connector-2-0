@@ -63,3 +63,6 @@ frontend/.next/
 .build/
 layout.md
 variables.env
+
+config/production.json
+config/default.json
