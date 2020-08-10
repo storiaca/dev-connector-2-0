@@ -9,16 +9,18 @@ const Register = () => {
   });
 
   const onChangeRegisterForm = (e) =>
-    setFormData({ ...formData, name: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const { name, email, password, password2 } = formData;
+
+  const onSubmit = () => {};
   return (
     <section className="container">
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Create Your Account
       </p>
-      <form className="form" action="create-profile.html">
+      <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
             type="text"
@@ -36,6 +38,7 @@ const Register = () => {
             value={email}
             onChange={(e) => onChangeRegisterForm(e)}
             name="email"
+            required
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
