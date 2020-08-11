@@ -13,7 +13,14 @@ const Register = () => {
 
   const { name, email, password, password2 } = formData;
 
-  const onSubmit = () => {};
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      console.log("Passwords do not match");
+    } else {
+      console.log(formData);
+    }
+  };
   return (
     <section className="container">
       <h1 className="large text-primary">Sign Up</h1>
