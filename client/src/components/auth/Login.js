@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [formData, setFormData] = useState({
@@ -31,10 +32,6 @@ const Login = (props) => {
             name="email"
             required
           />
-          <small className="form-text">
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
-          </small>
         </div>
         <div className="form-group">
           <input
@@ -47,10 +44,10 @@ const Login = (props) => {
           />
         </div>
 
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <input type="submit" className="btn btn-primary" value="Login" />
       </form>
       <p className="my-1">
-        Already have an account? <a href="login.html">Sign In</a>
+        Don't have an account? <a href="login.html">Sign In</a>
       </p>
     </section>
   );
