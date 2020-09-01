@@ -21,7 +21,7 @@ const Register = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      props.setAlert("Passwords do not match");
+      props.setAlert("Passwords do not match", "danger");
     } else {
       console.log("Success");
     }
