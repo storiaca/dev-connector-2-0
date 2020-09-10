@@ -8,8 +8,14 @@ import {
   AUTH_ERROR,
 } from "./types";
 
+import setAuthToken from "../utils/setAuthToken";
+
 // Load User
-export const loadUser = () => async (dispatch) => {};
+export const loadUser = () => async (dispatch) => {
+  if (localStorage.token) {
+    setAuthToken(localStorage);
+  }
+};
 
 // Register User
 export const register = ({ name, email, password }) => async (dispatch) => {
