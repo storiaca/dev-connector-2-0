@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
 
+import Spinner from "../../components/layout/Spinner";
+
 const Dashboard = ({ getCurrentProfile, auth, profile }) => {
   useEffect(() => {
     getCurrentProfile();
